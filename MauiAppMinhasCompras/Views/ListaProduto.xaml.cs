@@ -18,6 +18,7 @@ public partial class ListaProduto : ContentPage
     {
         try
         {
+            lista.Clear();
             List<Produto> tmp = await App.Db.GetAll();
             tmp.ForEach(i => lista.Add(i));
         }
@@ -66,7 +67,7 @@ public partial class ListaProduto : ContentPage
         {
             MenuItem selecionado = sender as MenuItem;
             Produto p = selecionado.BindingContext as Produto;
-            bool confirm = await DisplayAlert("Confirmação", $"Deseja excluir o produto {p.Descricao}?", "Sim", "Não");
+            bool confirm = await DisplayAlert("Confirmação", $"Deseja excluir o produto: {p.Descricao}?", "Sim", "Não");
             if (confirm)
             {
                 await App.Db.Delete(p.Id);

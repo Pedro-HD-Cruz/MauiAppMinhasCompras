@@ -14,7 +14,7 @@ namespace MauiAppMinhasCompras.Models
             get => _descricao;
             set
             {
-                if(value == null || value == string.Empty)
+                if(value == null)
                 {
                     throw new Exception("Descrição não pode ser vazia");
                 }
@@ -26,7 +26,7 @@ namespace MauiAppMinhasCompras.Models
             get => _quantidade;
             set 
             {
-                if (value == null || value == 0)
+                if (value == null)
                 {
                     throw new Exception("Quantidade não pode ser vazia");
                 }
@@ -38,7 +38,7 @@ namespace MauiAppMinhasCompras.Models
             get => _preco;
             set
             {
-                if (value == null || value == 0)
+                if (value == null)
                 {
                     throw new Exception("Preço não pode ser vazio");
                 }
